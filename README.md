@@ -6,6 +6,12 @@
   ES6 module; class access modifiers etc.
 
 
+### Build and Run
+
+`npm run start`
+
+
+
 ### See following resources especially:
 
 #### Typescript is well documented
