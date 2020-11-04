@@ -1,13 +1,19 @@
 import SomeClass from './someModule'
 
-// Access the static `world` parameter
+const someData: number[] = [1, 2, 3, 4, 5]
+
+// Access the static `world` property
 const world = SomeClass.world
 
 // Type alias for function accepting and returning `string`
 // `input` is optional since we provide a default parameter
 type someFunc = (input?: string) => string
 
-// Function implements the `someFunc` type
+/**
+ * Function implements the `someFunc` type
+ *
+ * @param word
+ */
 const hello: someFunc = (word: string = world): string => {
   return `Hello, ${word}!`
 }
@@ -25,23 +31,37 @@ interface SomeInterface {
   timeout: 1000 | 2000 | 3000 | 4000
 }
 
-// Function declares argument types inline
+/**
+ * Function declares argument types inline
+ *
+ * @param callback A callback function
+ * @param timeout Timeout in ms
+ * @returns `NodeJS.Timeout` (command click to see definitions)
+ */
 const delayWithInlineType = (callback: () => void, timeout: number) : NodeJS.Timeout => {
   return setTimeout(callback, timeout)
 }
 
-// Function asserts argument must satisfy the `SomeInterface` contract
-const delayWithInterface = (input: SomeInterface) : NodeJS.Timeout => {
+/**
+ * Function asserts argument must satisfy the `SomeInterface` contract, returns
+ * a promise just to see how the return typedef should look...
+ *
+ * @param input A `SomeInterface`
+ * @return `Promise<NodeJS.Timeout>`
+ */
+const delayWithInterface = async (input: SomeInterface) : Promise<NodeJS.Timeout> => {
   const { callback, timeout } = input
 
-  return setTimeout(callback, timeout)
+  return Promise.resolve(setTimeout(callback, timeout))
 }
+
+console.log(someData)
 
 console.log(hello())
 // This will fail compilation
 // console.log(hello({ name: 'Founders and Coders'}))
 
-delayWithInlineType(() => console.log(hello('Moon')), 2000)
-delayWithInterface({ callback: () => console.log(hello('Typescript')), timeout: 4000 })
+delayWithInlineType(() => console.log(hello('Moon')), 1000)
+delayWithInterface({ callback: () => console.log(hello('Typescript')), timeout: 2000 })
 
 
