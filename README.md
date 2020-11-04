@@ -1,7 +1,7 @@
 ## Basic Typescript Starter
 
 - Provides the basic packages and configurations for a simple Typescript project
-- Provides a few example of e.g. type definitions for arrays, function params
+- Provides a few example of e.g. type annotations for arrays, function params
   and return types; type aliases; interfaces; union types; async function type;
   ES6 module; class access modifiers etc.
 

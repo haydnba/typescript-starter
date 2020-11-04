@@ -1,6 +1,6 @@
 import SomeClass from './someModule'
 
-// Arrays are typed as show here
+// Arrays are annotated as show here
 const someData: number[] = [1, 2, 3, 4, 5]
 
 // Access the static `world` property
@@ -45,7 +45,7 @@ const delayWithInlineType = (callback: () => void, timeout: number) : NodeJS.Tim
 
 /**
  * Function asserts argument must satisfy the `SomeInterface` contract, returns
- * a promise just to see how the return typedef should look...
+ * a promise just to see how the return type annotation should look...
  *
  * @param input A `SomeInterface`
  * @return `Promise<NodeJS.Timeout>`
