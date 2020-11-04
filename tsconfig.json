@@ -1,0 +1,11 @@
+// https://www.staging-typescript.org/tsconfig
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "outDir": "dist",
+    "sourceMap": true
+  }
+}
