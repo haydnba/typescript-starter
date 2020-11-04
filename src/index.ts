@@ -1,5 +1,6 @@
 import SomeClass from './someModule'
 
+// Arrays are typed as show here
 const someData: number[] = [1, 2, 3, 4, 5]
 
 // Access the static `world` property
@@ -12,13 +13,13 @@ type someFunc = (input?: string) => string
 /**
  * Function implements the `someFunc` type
  *
- * @param word
+ * @param word A word to print
  */
 const hello: someFunc = (word: string = world): string => {
   return `Hello, ${word}!`
 }
 
-// Interface specifies a contract to be satisfied by any implementation
+// Interface specifies a contract to be satisfied by some implementation
 interface SomeInterface {
   /**
    * A callback function
@@ -32,7 +33,7 @@ interface SomeInterface {
 }
 
 /**
- * Function declares argument types inline
+ * Function declares argument types inline (Note: function's own type inferred)
  *
  * @param callback A callback function
  * @param timeout Timeout in ms
@@ -49,7 +50,7 @@ const delayWithInlineType = (callback: () => void, timeout: number) : NodeJS.Tim
  * @param input A `SomeInterface`
  * @return `Promise<NodeJS.Timeout>`
  */
-const delayWithInterface = async (input: SomeInterface) : Promise<NodeJS.Timeout> => {
+const delayWithInterface = (input: SomeInterface) : Promise<NodeJS.Timeout> => {
   const { callback, timeout } = input
 
   return Promise.resolve(setTimeout(callback, timeout))
