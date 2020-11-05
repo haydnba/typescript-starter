@@ -11,7 +11,6 @@
 `npm run start`
 
 
-
 ### See following resources especially:
 
 #### Typescript is well documented
